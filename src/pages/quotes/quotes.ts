@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavParams, AlertController } from 'ionic-angular';
 import { Quote } from '../../data/quote.interface';
+import { QuotesService } from '../../services/quotes';
 
 @Component({
   selector: 'page-quotes',
@@ -10,7 +11,7 @@ export class QuotesPage {
  quoteGroup: {category: string, quotes: Quote[], icon: string};
 
 //Get the data  from the library page-library
-constructor(private navParams: NavParams, private alertCtrl: AlertController){
+constructor(private navParams: NavParams, private alertCtrl: AlertController, private quotesService: QuotesService){
     this.quoteGroup = this.navParams.data;
     //.data is what is being passed for the quoteGroup{}
     console.log(this.quoteGroup);
@@ -27,7 +28,7 @@ onAddToFavorites(selectedQuote: Quote){
       {
         text: 'Yes, add to favorites',
         handler: () => {
-          console.log("OK");
+        this.quotesService.addQuoteToFavorites(selectedQuote);
         }
       },
       {
