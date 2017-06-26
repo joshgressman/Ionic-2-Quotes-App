@@ -19,8 +19,8 @@ ionViewDidLoad(){ //get data from the navParams sent to the modal from favorites
 
  //Method will close the modal window
  //View controller controls the currently active view
-  onClose(){
-   this.viewCtrl.dismiss();
+  onClose(remove = false){
+   this.viewCtrl.dismiss(remove);
   }
 
 }
