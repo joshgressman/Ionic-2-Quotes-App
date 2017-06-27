@@ -31,4 +31,9 @@ export class FavoritesPage {
    });
   }
 
+  onRemoveFromFavorites(quote: Quote){
+     this.quotesService.removeQuoteFromFavorites(quote);
+     this.quotes = this.quotesService.getFavoriteQuotes();
+  }
+
 }
