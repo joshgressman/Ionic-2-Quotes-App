@@ -44,4 +44,13 @@ onAddToFavorites(selectedQuote: Quote){
   alert.present();
 }
 
+onRemoveFromFavorites(quote: Quote){
+ this.quotesService.removeQuoteFromFavorites(quote);
+}
+
+//Checkin if this is already a favorite quote within the quotes service
+isFavorite(quote: Quote){
+  return this.quotesService.isQuoteFavorite(quote);
+}
+
 }
