@@ -36,4 +36,5 @@ export class FavoritesPage {
      this.quotes = this.quotesService.getFavoriteQuotes();
   }
 
+
 }
